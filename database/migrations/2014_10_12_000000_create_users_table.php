@@ -15,9 +15,9 @@ return new class extends Migration
             $table->id();
             $table->string('name');
             $table->string('email')->unique();
-            $table->string('profile_picture', 128);
+            $table->string('profile_picture', 128)->default('default.png');
             $table->string('password', 256);
-            $table->string('role', 16);
+            $table->string('role', 16)->default('customer');
             $table->string('phone_number', 32);
             $table->rememberToken();
             $table->timestamps();

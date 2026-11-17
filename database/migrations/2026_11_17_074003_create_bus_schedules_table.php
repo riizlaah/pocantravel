@@ -15,8 +15,9 @@ return new class extends Migration
     {
         Schema::create('bus_schedules', function (Blueprint $table) {
             $table->id();
-            $table->foreignId(TravelSchedule::class);
-            $table->foreignId(Bus::class);
+            $table->foreignIdFor(TravelSchedule::class);
+            $table->foreignIdFor(Bus::class);
+            $table->integer('max_slot', false, true);
             $table->timestamps();
         });
     }

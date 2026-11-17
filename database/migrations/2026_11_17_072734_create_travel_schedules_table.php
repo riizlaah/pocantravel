@@ -1,6 +1,7 @@
 <?php
 
 use App\Models\Location;
+use App\Models\RouteDetail;
 use App\Models\TravelSchedule;
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
@@ -15,9 +16,10 @@ return new class extends Migration
     {
         Schema::create('travel_schedules', function (Blueprint $table) {
             $table->id();
-            $table->foreignIdFor(Location::class);
-            $table->foreignIdFor(TravelSchedule::class);
-            $table->integer('order', false, true);
+            $table->foreignIdFor(RouteDetail::class);
+            $table->date('date');
+            $table->time('departure_time');
+            $table->decimal('price');
             $table->timestamps();
         });
     }

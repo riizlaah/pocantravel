@@ -14,9 +14,9 @@ return new class extends Migration
         Schema::create('buses', function (Blueprint $table) {
             $table->id();
             $table->string('name', 128);
-            $table->string('description', 384);
-            $table->string('image', 128);
-            $table->string('status', 32);
+            $table->string('description', 384)->nullable();
+            $table->string('image', 128)->default('default.png');
+            $table->string('status', 32)->default('normal');
             $table->timestamps();
         });
     }

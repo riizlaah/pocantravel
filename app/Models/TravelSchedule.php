@@ -8,4 +8,14 @@ use Illuminate\Database\Eloquent\Model;
 class TravelSchedule extends Model
 {
     use HasFactory;
+
+    protected $guarded = ['id'];
+
+    public function busSchedule() {
+        return $this->hasMany(BusSchedule::class);
+    }
+
+    public function routeDetail() {
+        return $this->belongsTo(RouteDetail::class);
+    }
 }
