@@ -11,6 +11,11 @@ class TravelSchedule extends Model
 
     protected $guarded = ['id'];
 
+    protected $casts = [
+        'price' => 'float',
+        'time' => 'time'
+    ];
+
     public function busSchedule() {
         return $this->hasMany(BusSchedule::class);
     }

@@ -8,5 +8,6 @@
 </head>
 <body>
   {{ $slot }}
+  <div class="mt-6"></div>
 </body>
 </html>

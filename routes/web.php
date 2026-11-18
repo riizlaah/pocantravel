@@ -24,4 +24,7 @@ Route::middleware('guest')->group(function() {
 Route::middleware('auth')->group(function() {
     Route::get('/logout', [AuthController::class, 'logout'])->middleware('auth');
     Route::get('/home', [TicketController::class, 'index']);
+    Route::get('/get-schedules', [TicketController::class, 'get_schedules']);
+    Route::get('/get-tickets', [TicketController::class, 'get_tickets']);
+    Route::post('/buy-ticket/{schedule}', [TicketController::class, 'buy_ticket']);
 });
