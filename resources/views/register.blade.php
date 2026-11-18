@@ -1,5 +1,5 @@
-<x-base-layout>
-  <div class="flex min-h-screen">
+<x-base-layout title="Login" hideNav="1">
+  <div class="flex flex-col md:flex-row min-h-screen">
     <div class="flex flex-grow justify-center items-center bg-sky-600">
       <h1 class="text-2xl font-bold text-white text-center">Selamat datang di PO CAN Travel</h1>
     </div>
@@ -19,14 +19,14 @@
         <label for="password">
           Password
           <div class="flex rounded-sm border border-gray-200 p-1 transition-all focus:border-gray-300 gap-1 px-1">
-            <input type="password" name="password" id="password" class="flex-grow outline-none" value="{{ old('password') }}" required>
+            <input type="password" name="password" id="password" class="flex-grow outline-none" required>
             <button type="button"></button>
           </div>
         </label>
         <label for="password2">
           Ulangi Password
           <div class="flex rounded-sm border border-gray-200 p-1 transition-all focus:border-gray-300 gap-1 px-1">
-            <input type="password" name="password2" id="password2" class="flex-grow outline-none" value="{{ old('password') }}" required>
+            <input type="password" name="password2" id="password2" class="flex-grow outline-none" required>
             <button type="button"></button>
           </div>
         </label>

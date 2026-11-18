@@ -12,7 +12,7 @@ use Illuminate\Support\Facades\Session;
 class AuthController extends Controller
 {
     public function index() {
-        return view('index', ['title' => 'Login']);
+        return view('index');
     }
 
     public function try_login(Request $req) {
@@ -27,7 +27,7 @@ class AuthController extends Controller
     }
 
     public function register() {
-        return view('register', ['title' => 'Register']);
+        return view('register');
     }
 
     public function try_register(Request $req) {

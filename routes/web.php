@@ -24,7 +24,11 @@ Route::middleware('guest')->group(function() {
 Route::middleware('auth')->group(function() {
     Route::get('/logout', [AuthController::class, 'logout'])->middleware('auth');
     Route::get('/home', [TicketController::class, 'index']);
-    Route::get('/get-schedules', [TicketController::class, 'get_schedules']);
-    Route::get('/get-tickets', [TicketController::class, 'get_tickets']);
-    Route::post('/buy-ticket/{schedule}', [TicketController::class, 'buy_ticket']);
+    Route::get('/paid-tickets', [TicketController::class, 'show_tickets']);
+    Route::get('/saved', [TicketController::class, 'show_saved_schedules']);
+    Route::get('/schedules', [TicketController::class, 'get_schedules']);
+    Route::get('/tickets', [TicketController::class, 'get_tickets']);
+    Route::post('/ticket/{schedule}/buy', [TicketController::class, 'buy_ticket']);
+    Route::get('/saved-schedules', [TicketController::class, 'get_saved_schedules']);
+    Route::post('/toggle-save-schedule/{schedule}', [TicketController::class, 'toggle_save_schedule']);
 });

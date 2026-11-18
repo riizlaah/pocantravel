@@ -22,4 +22,13 @@ class BusSchedule extends Model
     public function tickets() {
         return $this->hasMany(Ticket::class);
     }
+
+    public function bookmarks() {
+        return $this->hasMany(ScheduleBookmark::class);
+    }
+
+    public function bookmarkedBy() {
+        return $this->belongsToMany(User::class, 'schedule_bookmarks');
+    }
+
 }

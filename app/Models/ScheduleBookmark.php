@@ -18,4 +18,8 @@ class ScheduleBookmark extends Model
     public function busSchedule() {
         return $this->belongsTo(BusSchedule::class);
     }
+
+    public function tickets() {
+        return $this->hasManyThrough(Ticket::class, BusSchedule::class, 'id', 'bus_schedule_id', 'bus_schedule_id', 'id');
+    }
 }
