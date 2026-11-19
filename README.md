@@ -2,6 +2,9 @@
 
 Test case untuk seleksi magang di CAN Creative
 
+## ERD
+![PO CAN Travel ERD](pocantravel-erd.png)
+
 ## Features
 - Auth (login/register)
 - View (search & filter) tickets
@@ -18,4 +21,4 @@ Test case untuk seleksi magang di CAN Creative
 5. Jalankan `php artisan serve` untuk menjalankan proyeknya
 
 ## Note
-> Kadang setup/install package terblokir karena security adversories pada versi ini (Laravel 10), gunakan flag `--no-blocking` agar tetap terinstal
+> Menggunakan laravel 10, ada package yang masih memiliki beberapa security advisories
