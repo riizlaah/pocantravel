@@ -112,7 +112,7 @@ class TicketController extends Controller
     {
         $ticketCount = $schedule->tickets_count;
         if ($schedule->max_slot <= $ticketCount) return response()->json(['message' => 'Tidak ada slot yang tersisa'], 422);
-        // timezone quirk, code below isn't using Asia/Jakarta timezone but still showing it in the timezone prop.
+        // timezone quirk? code below sometime isn't using Asia/Jakarta timezone but still showing it in the timezone prop.
         $datetime = Carbon::parse($schedule->travelSchedule->date)->setTimeFromTimeString($schedule->travelSchedule->departure_time);
         $diff = $datetime->diffAsCarbonInterval(now(), false)->totalHours;
         if ($diff > -2) return response()->json(['message' => 'Sisa waktu keberangkatan kurang dari 2 jam'], 422);
